@@ -67,15 +67,25 @@ INSERT INTO person VALUES (seq_person_id.nextval, '이정재', '010-4444-4444', 
 INSERT INTO person VALUES (seq_person_id.nextval, '서장훈', '010-5555-5555', '02-5555-5555' );
 
 
+--모든 정보 출력
+SELECT  person_id pid,
+        name,
+        hp,
+        company
+FROM person
+;
+            
 -- (person id 3번)의 정보를 변경하기
 UPDATE person
-SET hp = '010-1212-1212'
-WHERE author_id = 3 ;
+SET hp = '010-1212-1212',
+    company = '010-2323-4343'
+WHERE person_id = 3 ;
+
 
 --author 테이블에서 person2 (id 2) 데이터를 삭제
-TRUNCATE TABLE person WHERE author_id = 2;
+TRUNCATE TABLE person WHERE person_id = 2;
 
-DELETE FROM person WHERE author_id = 2 ;
+DELETE FROM person WHERE person_id = 2 ;
 
 
 
