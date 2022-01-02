@@ -90,7 +90,7 @@ public class PhoneDao {
 //		실행
 			int count = pstmt.executeUpdate(); // 쿼리문 실행
 //		4.결과처리
-			System.out.println(count + "건이 저장되었습니다. \t (작가) ");
+			System.out.println(count + "건이 저장되었습니다. \t (연락처) ");
 
 		} catch (SQLException e) {
 			System.out.println("error:" + e);
@@ -125,7 +125,7 @@ public class PhoneDao {
 			int count = pstmt.executeUpdate();
 
 //			4.결과처리
-			System.out.println(index + "번 연락처, " + count + "건이 삭제되었습니다.");
+			System.out.println(index + "번 연락처가 삭제되었습니다.");
 
 		} catch (SQLException e) {
 			System.out.println("error:" + e);
@@ -194,13 +194,12 @@ try {
 	// 3. SQL문 준비 / 바인딩 / 실행
 	// 문자열 만들기
 	String query = "";
-	query += " 	SELECT  person_id pid "; // author_id as id
+	query += " 	SELECT  person_id pid, "; // author_id as id
 	query += "          name, ";
 	query += "          hp, ";
-	query += "          company, ";
+	query += "          company ";
 	query += "  FROM person ";
 	System.out.println(query);
-
 
 	// 문자열 쿼리문으로 만들기
 	pstmt = conn.prepareStatement(query);
