@@ -10,12 +10,15 @@ public class PhoneApp {
 		List<PersonVo> list;
 		PhoneDao phoneDao = new PhoneDao();
 
-//		연락처 입력하기 '둘리', '아기공룡', '1992-03-01', 1);
-		PersonVo ps01 = new PersonVo ("영심이", "말괄량이", 1);
+//		연락처 입력하기 1, '둘리', '010-1212-2323', '02-3232-3434');
+		PersonVo ps01 = new PersonVo(1, "영심이", "010-2323-3232", "02-5555-6666"); 
 		phoneDao.ContactsInput(ps01);
 
 		phoneDao.ContactsRemove(1);
 
+		phoneDao.ContactsUpdate(ps01);
+		
+		
 		System.out.println("================================");
 		list = phoneDao.PersonSelect(); 
 		for (int i = 0; i < list.size(); i++) {
